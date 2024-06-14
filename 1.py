@@ -26,7 +26,13 @@ while True:
         esperar_t()
         limpiar_p()
     elif opc == 2:
-        pass
+        if len(trabajadores) == 0:
+            print('ERROR NO EXISTEN REGISTROS')
+        else:
+            print("\tLISTA TRABAJADORES")
+            print("TRABAJADOR\tCARGO\tSUELDO BRUTO\DESC.SALUD\DESC.AFP\tLIQUIDO")
+            for t in trabajadores: #t = se convierte en el trabajador ya que recorre la lista en base a esto
+                print(f"{t[0]}\t{t[1]}\t{t[2]}\t\t\t{t[3]}\t\t\t{t[4]}\t{t[5]}")
         esperar_t()
     elif opc == 3:
         pass
