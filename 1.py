@@ -19,4 +19,3 @@ while True:
         opc_3
     else:
         opc_4()
-        limpiar_pantalla

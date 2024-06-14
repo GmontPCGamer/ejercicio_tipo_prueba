@@ -1,6 +1,6 @@
 import os, msvcrt, time
 trabajadores = []
-
+cargos = ("CEO","DESARROLLADOR","ANALISTA")
 def limpiar_pantalla():
     time.sleep(3)
 
@@ -21,7 +21,7 @@ def opc_1():
         desc_salud = round(7/100* sueldo_b)
         desc_afp  = int(12/100*sueldo_b)
         sueldo_liquido = sueldo_b-desc_afp-desc_salud
-        trabajador = [nombre_apellido, cargo, sueldo_b, desc_salud, desc_afp,sueldo_liquido]
+        trabajador = [nombre_apellido, cargo[cargos-1], sueldo_b, desc_salud, desc_afp,sueldo_liquido]
         trabajadores.append(trabajador)
         print('Trabajador registrado con exito!!')
         esperar_t()
@@ -49,7 +49,7 @@ def opc_3():
         else:
             with open("trabajadores_por_cargo", "w") as archivo:
                 for t in trabajadores:
-                    if opc2==[1]:
+                    if cargos[opc2-1]==[1]:
                         texto =  f"{t[0]} {t[1]} {t[2]} {t[3]} {t[4]} {t[5]}\n"
                         archivo.write(texto)
     esperar_t()
